@@ -37,30 +37,30 @@ sqlContext = SQLContext (sc)
 
 # ---------------load pickle files------------
 # for book info
-file = QFile('/Users/omercabuk/Downloads/recommendation/df_books.pkl')
+file = QFile('df_books.pkl')
 if file.open(QIODevice.ReadOnly):
     f = io.BytesIO(file.readAll().data())
     df_books = pd.read_pickle(f, compression=None)
 
 # for top100 books
-file1 = QFile('/Users/omercabuk/Downloads/recommendation/top_100_books.pkl')
+file1 = QFile('top_100_books.pkl')
 if file1.open(QIODevice.ReadOnly):
     f1 = io.BytesIO(file1.readAll().data())
     top_100_books = pd.read_pickle(f1, compression=None)
     
 
-recommendation_tbl = pickle.load(open('/Users/omercabuk/Downloads/recommendation/recommendation_tbl.pkl','rb'))
+recommendation_tbl = pickle.load(open('recommendation_tbl.pkl','rb'))
 
 # cosine_scores
-cosine = pickle.load(open('/Users/omercabuk/Downloads/recommendation/cosine.pkl','rb'))
+cosine = pickle.load(open('cosine.pkl','rb'))
 
 # euc_scores
-euc = pickle.load(open('/Users/omercabuk/Downloads/recommendation/euc.pkl','rb'))
+euc = pickle.load(open('euc.pkl','rb'))
 
 # mht_scores
-mht = pickle.load(open('/Users/omercabuk/Downloads/recommendation/mht.pkl','rb'))
+mht = pickle.load(open('mht.pkl','rb'))
 
-pivot = pickle.load(open('/Users/omercabuk/Downloads/recommendation/pivot.pkl','rb'))
+pivot = pickle.load(open('pivot.pkl','rb'))
 
 
 # -------------------------User Interface------------------------------------------------------------------
@@ -83,7 +83,7 @@ with home:
             "It's worth noting that this number includes both print and digital publications across different genres and languages."
         )
     with col2:
-        st.image("/Users/omercabuk/Downloads/recommendation/books.jpg", width=300)
+        st.image("books.jpg", width=300)
     st.markdown("This recommendation system helps you to find the perfect books that you would love to read.")
 
 # --------------------------Popular Boooks-------------------    
