@@ -1,9 +1,7 @@
 pandas
-PyQt5.QtCore
+QFile
+QIODevice
 streamlit
 joblib
 pickle
-IPython.display
-Image
-display
 numpy
