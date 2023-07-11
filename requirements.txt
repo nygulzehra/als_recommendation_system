@@ -2,5 +2,5 @@ PyQt5
 pandas
 streamlit
 joblib
-pickle
+scikit-learn
 numpy
