@@ -1,18 +1,9 @@
 import pyspark
-import io
 import pandas as pd
 from PyQt5.QtCore import QFile, QIODevice
-from pyspark.sql.functions import col
 import streamlit as st
 from joblib import load
 import pickle
-
-from pyspark.ml.recommendation import ALSModel
-from IPython. display import Image
-from IPython.display import display
-from pyspark.sql import SparkSession 
-from pyspark.sql import SQLContext
-import streamlit.components.v1 as com
 import numpy as np
 
 # Page Settings
@@ -26,14 +17,6 @@ st.set_page_config(
     }
 )
 
-
-spark = SparkSession.builder \
-                    .master ("local")\
-                    .appName ("Book Recommendation") \
-                    .getOrCreate()
-
-sc = spark.sparkContext
-sqlContext = SQLContext (sc)
 
 # ---------------load pickle files------------
 # for book info
